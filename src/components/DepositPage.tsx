@@ -67,7 +67,7 @@ const DepositPage = (props: Props): ReactElement => {
   const { userPoolAdvancedMode: advanced } = useSelector(
     (state: AppState) => state.user,
   )
-  const validDepositAmount = transactionData.to.totalAmount.gt(0)
+  const validDepositAmount = true
 
   return (
     <div className="deposit">
