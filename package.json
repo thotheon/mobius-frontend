@@ -1,6 +1,6 @@
 {
-  "name": "saddle-frontend",
-  "description": "The frontend for saddle.finance 🤠",
+  "name": "thotheon-frontend",
+  "description": "The frontend for thotheon.finance 🤠",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
