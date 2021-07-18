@@ -10,9 +10,9 @@ import {
   STABLECOIN_POOL_V2_NAME,
   VETH2_POOL_NAME,
 } from "../constants"
-import { AppDispatch } from "../state"
 import React, { ReactElement, Suspense, useCallback } from "react"
 import { Route, Switch } from "react-router-dom"
+import { AppDispatch } from "../state"
 import { useDispatch } from "react-redux"
 
 import Deposit from "./Deposit"
