@@ -1,0 +1,12 @@
+@import "../styles/theme";
+@import "../styles/viewports";
+
+.container {
+  width: 100%;
+  color: var(--text);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+  position: absolute;
+  bottom: 0.5rem;
+}

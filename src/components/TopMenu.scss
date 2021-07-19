@@ -30,6 +30,10 @@ header.top {
       @include breakpoint(md) {
         margin-right: 0.2em;
       }
+      @include breakpoint(sm) {
+        font-size: 0.5em;
+        display: none;
+      }
       &:hover {
         cursor: pointer;
         background: -webkit-linear-gradient(

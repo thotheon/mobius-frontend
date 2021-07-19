@@ -17,6 +17,7 @@ import { useDispatch } from "react-redux"
 
 import Deposit from "./Deposit"
 import PendingSwapsProvider from "../providers/PendingSwapsProvider"
+//import Footer from "../components/Footer"
 import Pools from "./Pools"
 import Risk from "./Risk"
 import Swap from "./Swap"

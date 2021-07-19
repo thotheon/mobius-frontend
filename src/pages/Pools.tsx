@@ -23,6 +23,8 @@ import styles from "./Pools.module.scss"
 import { useApproveAndMigrateUSD } from "../hooks/useApproveAndMigrateUSD"
 import usePoolData from "../hooks/usePoolData"
 
+import Footer from "../components/Footer"
+
 function Pools(): ReactElement | null {
   const [d4PoolData, d4UserShareData] = usePoolData(D4_POOL_NAME)
   const [alethPoolData, alethUserShareData] = usePoolData(ALETH_POOL_NAME)
@@ -180,6 +182,7 @@ function Pools(): ReactElement | null {
         ) : null}
         {currentModal === "confirm" ? <ConfirmTransaction /> : null}
       </Modal>
+      <Footer />
     </div>
   )
 }

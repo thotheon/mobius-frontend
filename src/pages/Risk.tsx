@@ -4,6 +4,7 @@ import React, { ReactElement } from "react"
 
 import TopMenu from "../components/TopMenu"
 import { useTranslation } from "react-i18next"
+import Footer from "../components/Footer"
 
 function Risk(): ReactElement {
   const { t } = useTranslation()
@@ -38,6 +39,7 @@ function Risk(): ReactElement {
         <h3>{t("lossOfPeg")}</h3>
         <p>{t("riskLossOfPeg")}</p>
       </div>
+      <Footer />
     </div>
   )
 }

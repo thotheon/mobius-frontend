@@ -29,6 +29,7 @@ import { logEvent } from "../utils/googleAnalytics"
 import { updateSwapAdvancedMode } from "../state/user"
 import { useActiveWeb3React } from "../hooks"
 import { useTranslation } from "react-i18next"
+import Footer from "../components/Footer"
 
 interface Props {
   tokenOptions: {
@@ -335,6 +336,7 @@ const SwapPage = (props: Props): ReactElement => {
           {currentModal === "confirm" ? <ConfirmTransaction /> : null}
         </Modal>
       </div>
+      <Footer />
     </div>
   )
 }
