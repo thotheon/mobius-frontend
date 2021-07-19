@@ -20,8 +20,11 @@ header.top {
     margin-right: auto;
 
     .logo {
-      background-color: #ffffe9;
-      border-radius: 52px;
+      //background-color: #ffffe9;
+      font-size: 2em;
+      transition: all 1s ease-in-out 0;
+      //border-radius: 52px;
+      //height: 4em;
       display: inline-block;
       margin-right: 0.4em;
       @include breakpoint(md) {
@@ -29,6 +32,13 @@ header.top {
       }
       &:hover {
         cursor: pointer;
+        background: -webkit-linear-gradient(
+          var(--logo-hover-start),
+          var(--logo-hover-end)
+        );
+        transition: all 1s ease-in-out 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
@@ -63,6 +73,7 @@ header.top {
         font-style: normal;
         font-weight: $normal;
         font-size: 20px;
+        transition: color 0.2s ease-in-out;
         @include breakpoint(lg) {
           font-size: 18px;
         }
@@ -74,6 +85,7 @@ header.top {
         }
         &:hover {
           opacity: 1;
+          color: var(--text-selected);
         }
 
         &.active {
@@ -97,7 +109,7 @@ header.top {
       }
     }
     img.logo {
-      height: 1.5em;
+      height: 1em;
     }
   }
 }

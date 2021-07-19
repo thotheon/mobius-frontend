@@ -43,10 +43,19 @@ ul {
   --background-lightgrey: #dfdde3;
   --background-element: rgba(255, 255, 244, 0.7);
   --background-element-hover: rgba(255, 255, 255, 0.88);
-  --background-main: #ffffe9 url("../assets/logo.svg") center/auto 60% no-repeat
-    fixed;
+  --background-main: #ffffe9
+    linear-gradient(
+      180deg,
+      #ffffe9 12%,
+      #ff0000 30%,
+      #ff8700 50%,
+      #0aefff 70%,
+      #be0aff 90%,
+      #ffffe9 100%
+    ); //url("../assets/eye_logo.png") center/auto 60%
+  //no-repeat fixed;
   --background-logo: #{$primary};
-  --secondary-button: #{$light-blue};
+  --secondary-button: #{$cyber-yellow};
   --outline: #000;
   --outline-gray: #8c8c94;
   --option-hover: #{$primary-blue-light};
@@ -57,14 +66,17 @@ ul {
   --text-lighter: #686868;
   --text-lightest: #a5a5a5;
   --text-title: #{text-black};
-  --text-primary: #{$primary-blue};
+  --text-primary: #{$dark-purple};
   --text-selected: #{$primary-blue};
-  --text-secondary-button: #{$primary-blue};
+  --text-secondary-button: #{$dark-purple};
   --text-secondary-button-disabled: #{$indigo20T};
   --header-text: #1f2023;
   --sign-graph: #000;
 
-  --shadow: 0px 2px 8px rgba(39, 14, 1, 0.1);
+  --logo-hover-start: #{$red};
+  --logo-hover-end: #{$cyber-yellow};
+
+  --shadow: 0px 3px 12px rgba(39, 14, 1, 0.1);
   --shadow-hover: 2px 2px 12px rgba(68, 64, 64, 0.2);
 }
 
@@ -76,8 +88,8 @@ body.dark {
   --background-lightgrey: #{$black80};
   --background-element: rgba(0, 0, 0, 0.56);
   --background-element-hover: rgba(0, 0, 0, 0.8);
-  --background-main: #000 url("../assets/logo.svg") center/auto 60% no-repeat
-    fixed;
+  --background-main: #000; // url("../assets/eye_dark_logo.png") center/auto 60%
+  //no-repeat fixed;
   --background-logo: #ffffe9;
   --secondary-button: #{$dark-purple};
   --outline: #fff;
@@ -91,11 +103,14 @@ body.dark {
   --text-lightest: #888888;
   --text-title: #ffffe9;
   --text-primary: #{$primary};
-  --text-selected: #{$primary};
+  --text-selected: #{$electric-purple};
   --text-secondary-button: #{$blue};
-  --text-secondary-button-disabled: #{$blue40T};
+  --text-secondary-button-disabled: #{$electric-purple};
   --header-text: #{$primary};
   --sign-graph: #{$primary-blue};
+
+  --logo-hover-start: #{$chartreuse};
+  --logo-hover-end: #{$electric-purple};
 
   --shadow: 0px 2px 8px rgba(39, 14, 1, 0.18);
   --shadow-hover: 2px 2px 12px rgba(68, 64, 64, 0.14);
