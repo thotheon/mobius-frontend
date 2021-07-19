@@ -88,7 +88,7 @@ body.dark {
   --background-lightgrey: #{$black80};
   --background-element: rgba(0, 0, 0, 0.56);
   --background-element-hover: rgba(0, 0, 0, 0.8);
-  --background-main: #000; // url("../assets/eye_dark_logo.png") center/auto 60%
+  --background-main: #000 linear-gradient(180deg, #000 0%, #{$black80} 100%); // url("../assets/eye_dark_logo.png") center/auto 60%
   //no-repeat fixed;
   --background-logo: #ffffe9;
   --secondary-button: #{$dark-purple};
