@@ -10,15 +10,28 @@ header.top {
   justify-content: center;
   align-items: center;
   @include breakpoint(sm) {
-    padding-left: 56px;
-    padding-right: 70px;
+    padding-left: 30px;
+    padding-right: 40px;
   }
 
   h1 {
     width: 30%;
     margin: 0;
     margin-right: auto;
+    display: flex;
 
+    .logo-img {
+      width: 20%;
+      margin-right: 0;
+      transition: all 1s ease-in-out;
+      &:hover {
+        transform: rotateZ(30deg);
+      }
+      @include breakpoint(sm) {
+        width: 100%;
+        margin-right: auto;
+      }
+    }
     .logo {
       //background-color: #ffffe9;
       font-size: 2em;

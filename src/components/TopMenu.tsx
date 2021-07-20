@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import ThemeChanger from "./ThemeChanger"
 import Web3Status from "./Web3Status"
 import classNames from "classnames"
-//import logo from "../assets/eye_logo.png"
+import logo from "../assets/Iris.png"
 import { useTranslation } from "react-i18next"
 
 interface Props {
@@ -20,7 +20,7 @@ function TopMenu({ activeTab }: Props): ReactElement {
     <header className="top">
       <h1>
         <Link to="/">
-          {/* <img className="logo" alt="logo" src={logo} /> */}
+          <img className="logo-img" alt="logo" src={logo} />
           <h1 className="logo">Iris</h1>
         </Link>
       </h1>
