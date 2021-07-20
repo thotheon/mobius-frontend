@@ -11,19 +11,27 @@ div.swapPage {
   h3.swapTitle {
     font-weight: 700;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 24px;
   }
 
   button:hover {
     cursor: pointer;
   }
 
+  .arrow {
+    width: 2.5em;
+    height: auto;
+    margin: 1em;
+  }
+
   .swapForm {
     width: 100%;
-    background: var(--background-element);
-    border: 1px solid var(--outline);
-    border-radius: 10px;
-    padding: 24px;
+    background: var(--background-see-through);
+    //border: 1px solid var(--outline);
+    border-radius: 40px;
+    padding: 30px;
+    padding-top: 15px;
+    box-shadow: var(--shadow);
     .row {
       display: flex;
       justify-content: space-between;
