@@ -17,7 +17,7 @@ import { useDispatch } from "react-redux"
 
 import Deposit from "./Deposit"
 import PendingSwapsProvider from "../providers/PendingSwapsProvider"
-//import Footer from "../components/Footer"
+import Footer from "../components/Footer"
 import Pools from "./Pools"
 import Risk from "./Risk"
 import Swap from "./Swap"
@@ -134,6 +134,7 @@ export default function App(): ReactElement {
               />
               <Route exact path="/risk" component={Risk} />
             </Switch>
+            <Footer />
           </PendingSwapsProvider>
         </GasAndTokenPrices>
       </Web3ReactManager>

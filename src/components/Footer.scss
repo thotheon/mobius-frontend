@@ -2,11 +2,14 @@
 @import "../styles/viewports";
 
 .container {
-  width: 100%;
+  width: 100vw;
+  display: flex;
   color: var(--text);
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: 0.5em;
-  position: absolute;
-  bottom: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  backdrop-filter: blur(5px);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
 }

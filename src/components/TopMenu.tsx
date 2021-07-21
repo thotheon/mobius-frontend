@@ -3,8 +3,8 @@ import "./TopMenu.scss"
 import React, { ReactElement } from "react"
 
 import { Link } from "react-router-dom"
-import ThemeChanger from "./ThemeChanger"
-import Web3Status from "./Web3Status"
+//import ThemeChanger from "./ThemeChanger"
+//import Web3Status from "./Web3Status"
 import classNames from "classnames"
 import logo from "../assets/Iris.png"
 import { useTranslation } from "react-i18next"
@@ -48,8 +48,6 @@ function TopMenu({ activeTab }: Props): ReactElement {
           </Link>
         </li>
       </ul>
-      <Web3Status />
-      <ThemeChanger />
     </header>
   )
 }

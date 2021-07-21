@@ -62,8 +62,8 @@ ul {
   --option-hover: #{$primary-blue-light};
   --tab: #{$black80};
 
-  --accent-1: #{$han-purple};
-  --acent-2: #{$light-green};
+  --accent-1: #{$accent-1};
+  --acent-2: #{$accent-2};
 
   --text: #000;
   --text-darker: #000;
@@ -71,7 +71,7 @@ ul {
   --text-lightest: #a5a5a5;
   --text-title: #{text-black};
   --text-primary: #{$dark-purple};
-  --text-selected: #{$primary-blue};
+  --text-selected: #ffff; //#{$primary-blue};
   --text-secondary-button: #{$dark-purple};
   --text-secondary-button-disabled: #{$indigo20T};
   --header-text: #1f2023;
