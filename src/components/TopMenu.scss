@@ -65,7 +65,6 @@ header.top {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    font-size: 30px;
 
     & > li {
       display: inline;
@@ -91,6 +90,7 @@ header.top {
         font-style: normal;
         font-weight: $normal;
         transition: color 0.2s ease-in-out;
+        font-size: 20px;
         @include breakpoint(lg) {
           font-size: 18px;
         }
