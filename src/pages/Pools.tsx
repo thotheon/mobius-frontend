@@ -17,7 +17,7 @@ import PoolOverview from "../components/PoolOverview"
 import ReviewMigration from "../components/ReviewMigration"
 import TopMenu from "../components/TopMenu"
 import { Zero } from "@ethersproject/constants"
-import classNames from "classnames"
+// import classNames from "classnames"
 import { logEvent } from "../utils/googleAnalytics"
 import styles from "./Pools.module.scss"
 import { useApproveAndMigrateUSD } from "../hooks/useApproveAndMigrateUSD"
@@ -41,6 +41,10 @@ function Pools(): ReactElement | null {
   const handleClickMigrate = (poolName: PoolName) => {
     setActiveMigration(poolName)
     setCurrentModal("migrate")
+  }
+
+  if (!filter) {
+    setFilter("all")
   }
 
   function getPropsForPool(poolName: PoolName) {
@@ -91,7 +95,7 @@ function Pools(): ReactElement | null {
   return (
     <div className={styles.poolsPage}>
       <TopMenu activeTab="pools" />
-      <ul className={styles.filters}>
+      {/* <ul className={styles.filters}>
         {[
           ["all", "ALL"] as const,
           [PoolTypes.BTC, "BTC"] as const,
@@ -110,7 +114,7 @@ function Pools(): ReactElement | null {
             {text}
           </li>
         ))}
-      </ul>
+      </ul> */}
       <div className={styles.content}>
         {Object.values(POOLS_MAP)
           .filter(
