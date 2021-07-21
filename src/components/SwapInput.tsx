@@ -6,7 +6,7 @@ import { TOKENS_MAP } from "../constants"
 import type { TokenOption } from "../pages/Swap"
 import classnames from "classnames"
 import { commify } from "../utils"
-import { formatBNToString } from "../utils"
+// import { formatBNToString } from "../utils"
 import styles from "./SwapInput.module.scss"
 import useDetectOutsideClick from "../hooks/useDetectOutsideClick"
 import { useTranslation } from "react-i18next"
@@ -25,7 +25,7 @@ export default function SwapInput({
   selected,
   onSelect,
   inputValue,
-  inputValueUSD,
+  // inputValueUSD,
   isSwapFrom,
   onChangeAmount,
 }: Props): ReactElement {
@@ -50,7 +50,44 @@ export default function SwapInput({
     <div className={styles.swapInputContainer}>
       <div
         className={classnames(
+          { [styles.focusable]: isSwapFrom },
+          styles.inputGroup,
+        )}
+        onClick={() => {
+          inputRef.current?.focus()
+        }}
+      >
+        <input
+          ref={inputRef}
+          autoComplete="off"
+          autoCorrect="off"
+          type="text"
+          placeholder="0"
+          spellCheck="false"
+          value={isSwapFrom ? inputValue : commify(inputValue)}
+          onChange={(e) => {
+            // remove all chars that aren't a digit or a period
+            const newValue = e.target.value.replace(/[^\d|.]/g, "")
+            // disallow more than one period
+            if (newValue.indexOf(".") !== newValue.lastIndexOf(".")) return
+            onChangeAmount?.(newValue)
+          }}
+          onFocus={(e: React.ChangeEvent<HTMLInputElement>): void => {
+            if (isSwapFrom) {
+              e.target.select()
+            }
+          }}
+          readOnly={!isSwapFrom}
+          tabIndex={isSwapFrom ? 0 : -1}
+        />
+        {/* <p className={styles.textMinor}>
+          ≈${commify(formatBNToString(inputValueUSD, 18, 2))}
+        </p> */}
+      </div>
+      <div
+        className={classnames(
           styles.selectGroup,
+          isSwapFrom ? styles.input : styles.output,
           onSelect && styles.hoverPointer,
         )}
         onClick={() => onSelect && setIsDropdownOpen((prev) => !prev)}
@@ -85,45 +122,11 @@ export default function SwapInput({
           )}
         </div>
       </div>
-      <div
-        className={classnames(
-          { [styles.focusable]: isSwapFrom },
-          styles.inputGroup,
-        )}
-        onClick={() => {
-          inputRef.current?.focus()
-        }}
-      >
-        <input
-          ref={inputRef}
-          autoComplete="off"
-          autoCorrect="off"
-          type="text"
-          placeholder="0.0"
-          spellCheck="false"
-          value={isSwapFrom ? inputValue : commify(inputValue)}
-          onChange={(e) => {
-            // remove all chars that aren't a digit or a period
-            const newValue = e.target.value.replace(/[^\d|.]/g, "")
-            // disallow more than one period
-            if (newValue.indexOf(".") !== newValue.lastIndexOf(".")) return
-            onChangeAmount?.(newValue)
-          }}
-          onFocus={(e: React.ChangeEvent<HTMLInputElement>): void => {
-            if (isSwapFrom) {
-              e.target.select()
-            }
-          }}
-          readOnly={!isSwapFrom}
-          tabIndex={isSwapFrom ? 0 : -1}
-        />
-        <p className={styles.textMinor}>
-          ≈${commify(formatBNToString(inputValueUSD, 18, 2))}
-        </p>
-      </div>
       {isDropdownOpen && (
-        <div className={styles.dropdownContainer} ref={wrapperRef}>
-          <SearchSelect tokensData={tokens} onSelect={handleSelect} />
+        <div className={styles.dropdownBackground}>
+          <div className={styles.dropdownContainer} ref={wrapperRef}>
+            <SearchSelect tokensData={tokens} onSelect={handleSelect} />
+          </div>
         </div>
       )}
     </div>

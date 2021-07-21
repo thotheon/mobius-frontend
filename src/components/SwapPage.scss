@@ -19,16 +19,17 @@ div.swapPage {
   }
 
   .arrow {
-    width: 2.5em;
+    width: 2em;
     height: auto;
-    margin: 1em;
+    margin: 0.25rem;
+    z-index: 3;
   }
 
   .swapForm {
     width: 100%;
     background: var(--background-see-through);
     //border: 1px solid var(--outline);
-    border-radius: 40px;
+    border-radius: 35px;
     padding: 30px;
     padding-top: 15px;
     box-shadow: var(--shadow);
@@ -55,7 +56,7 @@ div.swapPage {
   }
 
   .content {
-    width: 550px;
+    width: min(550px, 90%);
     margin: 0 auto;
     padding-top: 40px;
     display: flex;
@@ -63,7 +64,7 @@ div.swapPage {
     flex-direction: column;
     align-items: center;
     @include breakpoint(sm) {
-      width: 100%;
+      padding-top: 0;
     }
   }
 

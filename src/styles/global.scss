@@ -44,7 +44,7 @@ ul {
   --background-element: rgba(255, 255, 244, 0.7);
   --background-see-through: rgba(255, 255, 244, 0.5);
   --background-element-hover: rgba(255, 255, 255, 0.88);
-  --background-main: #ffffe9 url("../assets/background.png") center/100vh repeat;
+  --background-main: #ffffe9 url("../assets/background.png") center/300vh repeat;
   // linear-gradient(
   //   180deg,
   //   #ffffe9 12%,
@@ -61,6 +61,9 @@ ul {
   --outline-gray: #8c8c94;
   --option-hover: #{$primary-blue-light};
   --tab: #{$black80};
+
+  --accent-1: #{$han-purple};
+  --acent-2: #{$light-green};
 
   --text: #000;
   --text-darker: #000;

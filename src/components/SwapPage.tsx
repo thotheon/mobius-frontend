@@ -29,7 +29,6 @@ import { logEvent } from "../utils/googleAnalytics"
 import { updateSwapAdvancedMode } from "../state/user"
 import { useActiveWeb3React } from "../hooks"
 import { useTranslation } from "react-i18next"
-import Footer from "../components/Footer"
 import arrow from "../assets/DownArrow.svg"
 
 interface Props {
@@ -204,6 +203,20 @@ const SwapPage = (props: Props): ReactElement => {
             })}
           </div>
         ) : null}
+        <Center width="100%" py={6}>
+          <Button
+            variant="primary"
+            size="lg"
+            width="240px"
+            onClick={(): void => {
+              setCurrentModal("review")
+            }}
+            disabled={!!error || +toState.value <= 0}
+          >
+            {t("swap")}
+          </Button>
+        </Center>
+
         <div className="infoSection">
           <div
             className="title"
@@ -297,19 +310,6 @@ const SwapPage = (props: Props): ReactElement => {
             )
           })}
         </div>
-        <Center width="100%" py={6}>
-          <Button
-            variant="primary"
-            size="lg"
-            width="240px"
-            onClick={(): void => {
-              setCurrentModal("review")
-            }}
-            disabled={!!error || +toState.value <= 0}
-          >
-            {t("swap")}
-          </Button>
-        </Center>
         <div className={classNames({ showError: !!error }, "error")}>
           {error}
         </div>
@@ -340,7 +340,6 @@ const SwapPage = (props: Props): ReactElement => {
           {currentModal === "confirm" ? <ConfirmTransaction /> : null}
         </Modal>
       </div>
-      <Footer />
     </div>
   )
 }
